@@ -1,17 +1,29 @@
 # 💬 Flutter + FastAPI Real-Time Chat App
 
-A simple and efficient real-time chat application built using **Flutter** for the frontend and **FastAPI** for the backend via **WebSocket communication**.
+A beginner-friendly real-time chat application built using **Flutter** (frontend) and **FastAPI** (backend) with **WebSocket** communication.
+Great for learning how WebSockets work in full-stack apps!
+
+---
+
+## 🎯 Purpose
+
+This project is designed for **educational purposes** — to help you understand how:
+
+* Flutter connects to a WebSocket server
+* FastAPI handles real-time communication using WebSocket
+* Data flows between client and server
+* You can build chat UIs dynamically in Flutter
 
 ---
 
 ## 🚀 Features
 
-* 🔁 Real-time messaging via WebSockets
-* 👤 User joins by entering a name
-* 📩 Message broadcasting to all connected clients
-* 🧭 Differentiated UI for sender and receiver
-* 🕒 Timestamps on each message
-* 💡 Built with simplicity & scalability in mind
+* 🔁 Real-time messaging using WebSockets
+* 👤 Simple username entry before chat
+* 📩 Message broadcasting to all connected users
+* 🧭 UI distinguishes between sender and receiver
+* 🕒 Timestamp displayed with each message
+* 📚 Minimal and readable code for easy learning
 
 ---
 
@@ -19,54 +31,57 @@ A simple and efficient real-time chat application built using **Flutter** for th
 
 | Layer    | Technology       |
 | -------- | ---------------- |
-| Frontend | Flutter          |
+| Frontend | Flutter (Dart)   |
 | Backend  | FastAPI (Python) |
 | Protocol | WebSockets       |
 
 ---
 
-## 📦 Project Structure
+## 📦 Folder Structure
 
 ```
-├── backend/
-│   └── main.py              # FastAPI server with WebSocket endpoint
+├── lib/                  # Flutter code (Frontend)
+│   ├── chatScreen.dart   # Chat UI and WebSocket client logic
+│   ├── username.dart     # Screen to enter username
+│   └── chat_model.dart   # (optional) model class for messages
 │
-├── frontend/
-│   ├── lib/
-│   │   ├── chatScreen.dart  # Chat UI and socket logic
-│   │   └── userScreen.dart  # User name input screen
-│   └── pubspec.yaml         # Flutter dependencies
+├── server/               # FastAPI code (Backend)
+│   └── main.py           # WebSocket server using FastAPI
+│
+├── pubspec.yaml          # Flutter dependencies
+└── README.md
 ```
 
 ---
 
 ## ▶️ Getting Started
 
-### Backend (FastAPI)
+### 📡 Start Backend (FastAPI)
 
 ```bash
-cd backend
+cd server
 pip install fastapi uvicorn
 uvicorn main:app --reload --host 0.0.0.0 --port 8080
 ```
 
-### Frontend (Flutter)
+### 📱 Start Frontend (Flutter)
 
 ```bash
-cd frontend
 flutter pub get
 flutter run
 ```
 
+Make sure your **Flutter app points to the correct IP** (`ws://<your-ip>:8080/ws`).
+
 ---
 
-## 🧪 Sample Chat Flow
+## 💬 How It Works
 
-1. User opens app and enters a name.
-2. App connects to FastAPI server using WebSocket.
-3. Messages are sent in the format: `username: message`.
-4. Server receives & broadcasts message to all connected users.
-5. Messages are shown in chat UI with timestamp.
+1. User enters their name and joins the chat.
+2. Flutter connects to FastAPI server via WebSocket.
+3. Messages are sent in format: `username: message`.
+4. FastAPI receives and rebroadcasts the message to all clients.
+5. Flutter clients update their UI in real-time with timestamps.
 
 ---
 
@@ -78,18 +93,27 @@ flutter run
 
 ---
 
-## 📌 Future Improvements
+## 🧪 Learning Goals
 
-* 💾 Message persistence (File/Database)
-* 🔐 Authentication system
-* 📱 Responsive Web App version
-* 🧑‍🤝‍🧑 Group chats or private rooms
-* 🐳 Docker support
+✅ Understand real-time socket communication
+✅ Use `WebSocketChannel` in Flutter
+✅ Build a WebSocket server using FastAPI
+✅ Learn how to structure messages, update UI live, and broadcast data
+
+---
+
+## 📌 Future Enhancements
+
+* 💾 Save messages to file or database
+* 🔐 Add authentication
+* 📱 Build web support
+* 🧑‍🤝‍🧑 Create chat rooms
+* 🐳 Dockerize backend
 
 ---
 
 ## 📃 License
 
-This project is open-source and free to use under the [MIT License](LICENSE).
+Open-sourced under the [MIT License](LICENSE).
 
 ---
