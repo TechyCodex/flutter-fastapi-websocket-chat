@@ -114,6 +114,9 @@ Make sure your **Flutter app points to the correct IP** (`ws://<your-ip>:8080/ws
 
 ## 📃 License
 
-Open-sourced under the [MIT License](LICENSE).
+## 📃 License
+
+This project is licensed under the [MIT License](LICENSE) by **Parikshit Verma** and **TechyCodex** – feel free to use, modify, and share it for learning or development purposes.
+
 
 ---
